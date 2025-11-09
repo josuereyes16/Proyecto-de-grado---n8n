@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Chart.js eliminado ya que no se usa -->
     <style>
         body {
             font-family: 'Exo 2', sans-serif;
@@ -66,29 +66,39 @@
 </head>
 <body class="main-bg text-gray-200 min-h-screen flex flex-col md:flex-row">
 
-    <!-- Sidebar de Navegación -->
+    <!-- Banner de notificación (ELIMINADO DE AQUÍ) -->
+    <!-- 
+    <div id="notification-banner" class="hidden fixed top-5 left-1/2 -translate-x-1/2 z-50 p-4 rounded-lg shadow-lg text-white max-w-md w-full text-center">
+        <p id="notification-message"></p>
+    </div>
+     -->
+
+    <!-- Sidebar de Navegación (Actualizado) -->
     <nav class="w-full md:w-64 glassmorphism p-4 md:p-6 flex-shrink-0">
         <div class="text-center mb-8">
             <h1 class="text-2xl font-bold text-white neon-text">PROYECTO N8N</h1>
             <p class="text-sm text-purple-300">Antonio Josué Reyes </p>
         </div>
         <ul class="space-y-3">
+            <!-- Orden nuevo y secciones actualizadas -->
             <li><a href="#" class="nav-link active flex items-center p-3 rounded-lg hover:bg-purple-700 transition-all duration-300" data-section="inicio">
                 <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>Inicio</a></li>
             <li><a href="#" class="nav-link flex items-center p-3 rounded-lg hover:bg-purple-700 transition-all duration-300" data-section="que-es-n8n">
                 <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.546-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>¿Qué es n8n?</a></li>
-            <li><a href="#" class="nav-link flex items-center p-3 rounded-lg hover:bg-purple-700 transition-all duration-300" data-section="configuracion">
-                <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>Configuración</a></li>
             <li><a href="#" class="nav-link flex items-center p-3 rounded-lg hover:bg-purple-700 transition-all duration-300" data-section="instalacion">
-                <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>Instalación</a></li>
-            <li><a href="#" class="nav-link flex items-center p-3 rounded-lg hover:bg-purple-700 transition-all duration-300" data-section="documentacion">
-                <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>Documentación</a></li>
+                <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>Instalación n8n</a></li>
+            <li><a href="#" class="nav-link flex items-center p-3 rounded-lg hover:bg-purple-700 transition-all duration-300" data-section="contexto">
+                <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>Contextualización</a></li>
             <li><a href="#" class="nav-link flex items-center p-3 rounded-lg hover:bg-purple-700 transition-all duration-300" data-section="fases">
                 <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>Fases del Proyecto</a></li>
-            <li><a href="#" class="nav-link flex items-center p-3 rounded-lg hover:bg-purple-700 transition-all duration-300" data-section="demo">
-                <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>Demo Interactiva</a></li>
-            <li><a href="#" class="nav-link flex items-center p-3 rounded-lg hover:bg-purple-700 transition-all duration-300" data-section="panel">
-                <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>Panel Admin</a></li>
+            <li><a href="#" class="nav-link flex items-center p-3 rounded-lg hover:bg-purple-700 transition-all duration-300" data-section="workflow-wpp">
+                <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.542 15.174 3 13.636 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg>Workflow WhatsApp</a></li>
+            <li><a href="#" class="nav-link flex items-center p-3 rounded-lg hover:bg-purple-700 transition-all duration-300" data-section="workflow-ig">
+                <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.542 15.174 3 13.636 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg>Workflow Instagram</a></li>
+            <li><a href="#" class="nav-link flex items-center p-3 rounded-lg hover:bg-purple-700 transition-all duration-300" data-section="workflow-msg">
+                <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.542 15.174 3 13.636 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg>Workflow Messenger</a></li>
+            <li><a href="#" class="nav-link flex items-center p-3 rounded-lg hover:bg-purple-700 transition-all duration-300" data-section="resultados">
+                <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 11l3-3m0 0l3 3m-3-3v8m0-13a9 9 0 110 18 9 9 0 010-18zm0 18c-1.03 0-2.02-.16-2.94-.45l-2.65 1.53c-.6.35-1.3-.28-1-1l.24-.7A8.96 8.96 0 013 12c0-4.97 4.03-9 9-9s9 4.03 9 9-4.03 9-9 9z"></path></svg>Resultados</a></li>
             <li><a href="#" class="nav-link flex items-center p-3 rounded-lg hover:bg-purple-700 transition-all duration-300" data-section="contacto">
                 <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>Contacto</a></li>
         </ul>
@@ -97,7 +107,14 @@
     <!-- Contenido Principal -->
     <main class="flex-1 p-6 md:p-10 overflow-y-auto">
 
-        <!-- Sección de Inicio -->
+        <!-- Banner de notificación (ELIMINADO DE AQUÍ) -->
+        <!-- 
+        <div id="notification-banner" class="hidden fixed top-5 left-1/2 -translate-x-1/2 z-50 p-4 rounded-lg shadow-lg text-white max-w-md w-full text-center">
+            <p id="notification-message"></p>
+        </div>
+         -->
+
+        <!-- Sección de Inicio (INTACTA) -->
         <div id="inicio" class="section-content active">
              <div class="glassmorphism p-8 rounded-xl max-w-4xl mx-auto text-center">
                 <h2 class="text-3xl font-bold mb-4 text-white neon-text">Proyecto de Grado – Ingeniería de Sistemas</h2>
@@ -116,7 +133,7 @@
             </div>
         </div>
         
-        <!-- Sección ¿Qué es n8n? -->
+        <!-- Sección ¿Qué es n8n? (CORREGIDA) -->
         <div id="que-es-n8n" class="section-content">
             <div class="glassmorphism p-8 rounded-xl max-w-4xl mx-auto">
                 <h2 class="text-3xl font-bold mb-6 text-white neon-text text-center">¿Qué es n8n?</h2>
@@ -125,10 +142,11 @@
                 </p>
                 <p class="text-gray-300 mb-6 leading-relaxed text-justify">
                     Este enfoque, conocido como no-code/low-code, democratiza la creación de integraciones y automatizaciones, eliminando la necesidad de tener conocimientos avanzados en programación.
-                </p>
+                </p> <!-- CORREGIDO: Era </D> -->
                 
+                <!-- IMAGEN ACTUALIZADA -->
                 <div class="my-6 text-center">
-                    <img src="1.jpg" alt="Logo oficial de n8n" class="mx-auto rounded-lg max-w-sm bg-white/10 p-4">
+                    <img src="imgs/logo.png" alt="Logo oficial de n8n" class="mx-auto rounded-lg max-w-sm bg-white/10 p-2"> <!-- CORREGIDO: Era p- -->
                 </div>
 
                 <p class="text-gray-300 mb-8 leading-relaxed text-justify">
@@ -146,99 +164,275 @@
                         <a href="https://www.youtube.com/watch?v=TixlT7lTWMQ" target="_blank" class="text-blue-400 hover:underline ml-2">https://www.youtube.com/watch?v=TixlT7lTWMQ</a>
                         <p class="text-sm text-purple-300 mt-1">Autor: Aprende a Programar YOUTUBE</p>
                     </div>
+                    <!-- RECURSOS DE DOSTIN HURTADO ELIMINADOS DE AQUÍ -->
                 </div>
             </div>
         </div>
 
-        <!-- Sección de Configuración -->
-        <div id="configuracion" class="section-content">
-             <h2 class="text-3xl font-bold mb-6 text-white neon-text">Configuración del Agente</h2>
-             <div class="glassmorphism p-8 rounded-xl grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div>
-                    <h3 class="text-xl font-semibold text-pink-400 mb-4">Conexiones de Redes Sociales</h3>
-                    <div class="space-y-4">
-                        <div>
-                            <label class="block text-sm font-medium text-gray-300">API Key de Twitter/X</label>
-                            <input type="text" placeholder="Ingresa tu API Key" class="mt-1 block w-full bg-gray-900/50 border-purple-400 rounded-md shadow-sm py-2 px-3 text-white focus:outline-none focus:ring-pink-500 focus:border-pink-500">
-                        </div>
-                        <div>
-                            <label class="block text-sm font-medium text-gray-300">Token de Acceso de Facebook</label>
-                            <input type="text" placeholder="Ingresa tu Token de Acceso" class="mt-1 block w-full bg-gray-900/50 border-purple-400 rounded-md shadow-sm py-2 px-3 text-white focus:outline-none focus:ring-pink-500 focus:border-pink-500">
-                        </div>
-                         <div>
-                            <label class="block text-sm font-medium text-gray-300">Webhook URL de Instagram</label>
-                            <input type="text" placeholder="Ingresa tu Webhook URL" class="mt-1 block w-full bg-gray-900/50 border-purple-400 rounded-md shadow-sm py-2 px-3 text-white focus:outline-none focus:ring-pink-500 focus:border-pink-500">
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <h3 class="text-xl font-semibold text-blue-400 mb-4">Ajustes del Agente</h3>
-                    <div class="space-y-4">
-                        <div>
-                            <label class="block text-sm font-medium text-gray-300">Intervalo de Verificación (minutos)</label>
-                            <input type="number" value="5" class="mt-1 block w-full bg-gray-900/50 border-purple-400 rounded-md shadow-sm py-2 px-3 text-white focus:outline-none focus:ring-blue-500 focus:border-blue-500">
-                        </div>
-                        <div>
-                            <label for="default-response-textarea" class="block text-sm font-medium text-gray-300">Respuesta Automática Predeterminada</label>
-                            <div class="relative mt-1">
-                                <textarea id="default-response-textarea" rows="3" class="block w-full bg-gray-900/50 border-purple-400 rounded-md shadow-sm py-2 px-3 text-white focus:outline-none focus:ring-blue-500 focus:border-blue-500">Gracias por tu mensaje. Lo hemos recibido y te responderemos pronto.</textarea>
-                                <button type="button" id="generate-response-btn" class="absolute bottom-2 right-2 bg-pink-600 text-white text-xs font-bold py-1 px-3 rounded-md hover:bg-pink-700 transition-all duration-300">
-                                    Generar con IA ✨
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="md:col-span-2 text-right">
-                     <button class="bg-blue-600 text-white font-bold py-2 px-5 rounded-lg neon-glow-blue hover:bg-blue-700 transition-all duration-300">
-                        Guardar Configuración
-                    </button>
-                </div>
-             </div>
-        </div>
-
-        <!-- Sección de Instalación -->
+        <!-- Sección de Instalación (ACTUALIZADA) -->
         <div id="instalacion" class="section-content">
-            <h2 class="text-3xl font-bold mb-6 text-white neon-text">Instalación y Puesta en Marcha</h2>
-            <div class="glassmorphism p-8 rounded-xl space-y-6">
+            <!-- TÍTULO MOVIDO DENTRO DEL DIV Y CENTRADO -->
+            <div class="glassmorphism p-8 rounded-xl max-w-4xl mx-auto space-y-8">
+                <h2 class="text-3xl font-bold mb-6 text-white neon-text text-center">Modos de instalación de n8n</h2>
+                
+                <p class="text-gray-300 leading-relaxed text-justify"> <!-- Texto justificado para consistencia -->
+                    n8n ofrece varias formas de instalación para adaptarse a distintos entornos: desde usuarios principiantes hasta infraestructuras empresariales.
+                    A continuación, se describen los <strong>tres métodos más importantes</strong>: <strong>n8n Cloud</strong>, <strong>instalación con Node.js</strong> y <strong>instalación con Docker</strong>.
+                </p>
+        
+                <hr class="border-purple-500/30">
+        
+                <!-- 1. n8n Cloud -->
                 <div>
-                    <h3 class="text-xl font-semibold text-pink-400">Paso 1: Configurar n8n</h3>
-                    <p class="mt-2 text-gray-300">Asegúrate de tener una instancia de n8n corriendo. Puedes usar n8n.cloud, Docker, o instalarlo localmente con npm. Visita la <a href="https://n8n.io/" target="_blank" class="text-blue-400 hover:underline">documentación oficial de n8n</a> para más detalles.</p>
+                    <h3 class="text-2xl font-semibold text-pink-400 mb-4">☁️ 1. Instalación en la nube – n8n Cloud</h3>
+                    <p class="text-gray-300 mb-4 leading-relaxed">
+                        <strong>n8n Cloud</strong> es la versión oficial alojada por el equipo de n8n.
+                        No requiere instalación local ni conocimientos técnicos, ya que todo el servicio corre en servidores gestionados por n8n.
+                    </p>
+        
+                    <h4 class="text-xl font-semibold text-purple-300 mb-2">Características principales</h4> <!-- EMOJI 🔹 ELIMINADO -->
+                    <ul class="list-disc list-inside text-gray-300 space-y-1 mb-4">
+                        <li>Acceso 100 % web, desde cualquier navegador.</li>
+                        <li>Mantenimiento, copias de seguridad y seguridad gestionados por n8n.</li>
+                        <li>Ideal para equipos que quieren usar n8n sin encargarse de la infraestructura.</li>
+                        <li>Incluye autenticación, encriptación y soporte técnico.</li>
+                    </ul>
+        
+                    <h4 class="text-xl font-semibold text-purple-300 mb-2">Pasos de instalación</h4> <!-- EMOJI 🪜 ELIMINADO -->
+                    <ol class="list-decimal list-inside text-gray-300 space-y-1 mb-4">
+                        <li>Visita <a href="https://n8n.io" target="_blank" class="text-blue-400 hover:underline">https://n8n.io</a></li>
+                        <li>Haz clic en <strong>“Try n8n Cloud”</strong> o <strong>“Get Started”</strong>.</li>
+                        <li>Crea una cuenta con correo, GitHub o Google.</li>
+                        <li>Configura tu primer “workspace” (espacio de trabajo).</li>
+                        <li>Ingresa directamente al panel de automatizaciones.</li>
+                    </ol>
+        
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                        <div>
+                            <h4 class="text-lg font-semibold text-green-400 mb-2">✅ Ventajas</h4>
+                            <ul class="list-disc list-inside text-gray-300 space-y-1">
+                                <li>No necesitas instalar nada.</li>
+                                <li>Alta disponibilidad y actualizaciones automáticas.</li>
+                                <li>Configuración de seguridad integrada.</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-semibold text-red-400 mb-2">⚠️ Desventajas</h4>
+                            <ul class="list-disc list-inside text-gray-300 space-y-1">
+                                <li>Tiene costo mensual tras el período de prueba.</li>
+                                <li>No tienes acceso completo al backend del sistema.</li>
+                            </ul>
+                        </div>
+                    </div>
+        
+                    <!-- SECCIÓN CONSEJO ELIMINADA -->
                 </div>
+        
+                <hr class="border-purple-500/30">
+        
+                <!-- 2. Node.js -->
                 <div>
-                    <h3 class="text-xl font-semibold text-pink-400">Paso 2: Descargar el Workflow</h3>
-                    <p class="mt-2 text-gray-300">Descarga el archivo JSON que contiene el flujo de trabajo pre-configurado para el agente de automatización.</p>
-                    <button class="mt-3 bg-purple-600 text-white font-bold py-2 px-5 rounded-lg neon-glow hover:bg-purple-700 transition-all duration-300">
-                        Descargar workflow.json
-                    </button>
+                    <h3 class="text-2xl font-semibold text-pink-400 mb-4">💻 2. Instalación local con Node.js</h3>
+                    <p class="text-gray-300 mb-4 leading-relaxed">
+                        Este método permite ejecutar n8n directamente en tu computadora, ideal para <strong>desarrollo, pruebas o entornos de aprendizaje</strong>.
+                    </p>
+        
+                    <h4 class="text-xl font-semibold text-purple-300 mb-2">Características principales</h4> <!-- EMOJI 🔹 ELIMINADO -->
+                    <ul class="list-disc list-inside text-gray-300 space-y-1 mb-4">
+                        <li>Se ejecuta con <strong>Node.js</strong>, el entorno JavaScript sobre el que está construido n8n.</li>
+                        <li>No requiere contenedores.</li>
+                        <li>Puedes personalizar la instalación o incluso modificar el código fuente.</li>
+                    </ul>
+        
+                    <h4 class="text-xl font-semibold text-purple-300 mb-2">Pasos de instalación</h4> <!-- EMOJI 🪜 ELIMINADO -->
+                    <h5 class="text-lg font-semibold text-gray-300 mt-4 mb-2">1️⃣ Instalar Node.js</h5>
+                    <p class="text-gray-300 mb-2">Descarga la versión estable desde <a href="https://nodejs.org" target="_blank" class="text-blue-400 hover:underline">https://nodejs.org</a></p>
+                    <p class="text-gray-300 mb-2">Verifica que esté instalado correctamente:</p>
+                    <pre class="bg-gray-900/50 p-4 rounded-md text-white font-mono text-sm overflow-x-auto mb-4"><code>node -v
+npm -v</code></pre>
+        
+                    <h5 class="text-lg font-semibold text-gray-300 mt-4 mb-2">2️⃣ Instalar n8n globalmente</h5>
+                    <p class="text-gray-300 mb-2">Ejecuta el siguiente comando en la terminal:</p>
+                    <pre class="bg-gray-900/50 p-4 rounded-md text-white font-mono text-sm overflow-x-auto mb-4"><code>npm install -g n8n</code></pre>
+        
+                    <h5 class="text-lg font-semibold text-gray-300 mt-4 mb-2">3️⃣ Ejecutar n8n</h5>
+                    <p class="text-gray-300 mb-2">Inicia el servidor con:</p>
+                    <pre class="bg-gray-900/50 p-4 rounded-md text-white font-mono text-sm overflow-x-auto mb-4"><code>n8n</code></pre>
+        
+                    <h5 class="text-lg font-semibold text-gray-300 mt-4 mb-2">4️⃣ Accede desde el navegador</h5>
+                    <p class="text-gray-300 mb-2">Abre la URL:</p>
+                    <pre class="bg-gray-900/50 p-4 rounded-md text-white font-mono text-sm overflow-x-auto mb-4"><code>http://localhost:5678</code></pre>
+                    <p class="text-gray-300 mb-4">y verás el editor visual de flujos.</p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                        <div>
+                            <h4 class="text-lg font-semibold text-green-400 mb-2">✅ Ventajas</h4>
+                            <ul class="list-disc list-inside text-gray-300 space-y-1">
+                                <li>Rápido de instalar y ejecutar.</li>
+                                <li>Ideal para aprendizaje o desarrollo de plugins personalizados.</li>
+                                <li>No depende de conexión a internet (modo local).</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-semibold text-red-400 mb-2">⚠️ Desventajas</h4>
+                            <ul class="list-disc list-inside text-gray-300 space-y-1">
+                                <li>Si cierras la terminal, el servicio se apaga.</li>
+                                <li>No recomendable para producción.</li>
+                                <li>No incluye persistencia de datos avanzada.</li>
+                            </ul>
+                        </div>
+                    </div>
+        
+                    <!-- SECCIÓN CONSEJO ELIMINADA -->
                 </div>
+        
+                <hr class="border-purple-500/30">
+        
+                <!-- 3. Docker -->
                 <div>
-                    <h3 class="text-xl font-semibold text-pink-400">Paso 3: Importar y Configurar Credenciales</h3>
-                    <p class="mt-2 text-gray-300">En tu instancia de n8n, importa el archivo JSON. Luego, navega a los nodos que requieren credenciales (ej. Twitter, Facebook) y añade tus propias claves de API y tokens de acceso.</p>
+                    <h3 class="text-2xl font-semibold text-pink-400 mb-4">🐳 3. Instalación con Docker / Docker Compose</h3>
+                    <p class="text-gray-300 mb-4 leading-relaxed">
+                        Este es el método <strong>más utilizado en entornos profesionales o de producción</strong>, porque facilita el despliegue, la persistencia y el manejo de dependencias.
+                    </p>
+        
+                    <h4 class="text-xl font-semibold text-purple-300 mb-2">Características principales</h4> <!-- EMOJI 🔹 ELIMINADO -->
+                    <ul class="list-disc list-inside text-gray-300 space-y-1 mb-4">
+                        <li>Ejecuta n8n dentro de un contenedor Docker.</li>
+                        <li>Permite montar volúmenes para guardar flujos, credenciales y configuraciones.</li>
+                        <li>Puede combinarse con una base de datos externa (PostgreSQL o MySQL).</li>
+                        <li>Facilita la integración con proxys reversos y certificados SSL.</li>
+                    </ul>
+        
+                    <h4 class="text-xl font-semibold text-purple-300 mb-2">Pasos de instalación</h4> <!-- EMOJI 🪜 ELIMINADO -->
+                    <h5 class="text-lg font-semibold text-gray-300 mt-4 mb-2">1️⃣ Instalar Docker y Docker Compose</h5>
+                    <p class="text-gray-300 mb-2">Descarga desde <a href="https://www.docker.com" target="_blank" class="text-blue-400 hover:underline">https://www.docker.com</a></p>
+                    <p class="text-gray-300 mb-2">Verifica instalación:</p>
+                    <pre class="bg-gray-900/50 p-4 rounded-md text-white font-mono text-sm overflow-x-auto mb-4"><code>docker -v
+docker-compose -v</code></pre>
+        
+                    <h5 class="text-lg font-semibold text-gray-300 mt-4 mb-2">2️⃣ Crear carpeta de proyecto</h5>
+                    <pre class="bg-gray-900/50 p-4 rounded-md text-white font-mono text-sm overflow-x-auto mb-4"><code>mkdir n8n && cd n8n</code></pre>
+        
+                    <h5 class="text-lg font-semibold text-gray-300 mt-4 mb-2">3️⃣ Crear archivo docker-compose.yml</h5>
+                    <p class="text-gray-300 mb-2">Copia y pega el siguiente contenido:</p>
+                    <pre class="bg-gray-900/50 p-4 rounded-md text-white font-mono text-sm overflow-x-auto mb-4"><code>version: '3.8'
+
+services:
+  n8n:
+    image: n8nio/n8n
+    restart: always
+    ports:
+      - "5678:5678"
+    environment:
+      - N8N_BASIC_AUTH_ACTIVE=true
+      - N8N_BASIC_AUTH_USER=admin
+      - N8N_BASIC_AUTH_PASSWORD=1234
+    volumes:
+      - ./n8n_data:/home/node/.n8n</code></pre>
+        
+                    <h5 class="text-lg font-semibold text-gray-300 mt-4 mb-2">4️⃣ Ejecutar el contenedor</h5>
+                    <pre class="bg-gray-900/50 p-4 rounded-md text-white font-mono text-sm overflow-x-auto mb-4"><code>docker-compose up -d</code></pre>
+        
+                    <h5 class="text-lg font-semibold text-gray-300 mt-4 mb-2">5️⃣ Acceder desde el navegador</h5>
+                    <pre class="bg-gray-900/50 p-4 rounded-md text-white font-mono text-sm overflow-x-auto mb-4"><code>http://localhost:5678</code></pre>
+        
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                        <div>
+                            <h4 class="text-lg font-semibold text-green-400 mb-2">✅ Ventajas</h4>
+                            <ul class="list-disc list-inside text-gray-300 space-y-1">
+                                <li>Ideal para producción: persistencia y estabilidad.</li>
+                                <li>Facilita copias de seguridad y migraciones.</li>
+                                <li>Actualizaciones simples (solo cambiar la imagen).</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-semibold text-red-400 mb-2">⚠️ Desventajas</h4>
+                            <ul class="list-disc list-inside text-gray-300 space-y-1">
+                                <li>Requiere conocer Docker.</li>
+                                <li>Puede consumir más recursos que la instalación local.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- SECCIÓN CONSEJO ELIMINADA -->
                 </div>
-                 <div>
-                    <h3 class="text-xl font-semibold text-pink-400">Paso 4: Activar el Workflow</h3>
-                    <p class="mt-2 text-gray-300">Una vez configuradas las credenciales, activa el workflow. El agente comenzará a escuchar eventos y a procesar mensajes según la lógica definida.</p>
+        
+                <hr class="border-purple-500/30">
+        
+                <!-- 4. Resumen -->
+                <div>
+                    <h3 class="text-2xl font-semibold text-pink-400 mb-4 text-center">Resumen comparativo</h3> <!-- EMOJI 🧾 ELIMINADO Y TÍTULO CENTRADO -->
+                    <div class="overflow-x-auto rounded-lg border border-purple-500/30">
+                        <table class="w-full text-left text-gray-300">
+                            <thead class="bg-purple-900/50">
+                                <tr>
+                                    <th class="p-3">Método</th>
+                                    <th class="p-3">Dificultad</th>
+                                    <th class="p-3">Ideal para</th>
+                                    <th class="p-3">Persistencia</th>
+                                    <th class="p-3">Actualizaciones</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-purple-500/30">
+                                <tr class="hover:bg-purple-900/20">
+                                    <td class="p-3">☁️ <strong>Cloud</strong></td>
+                                    <td class="p-3">Muy baja</td>
+                                    <td class="p-3">Usuarios principiantes o empresas</td>
+                                    <td class="p-3">Automática</td>
+                                    <td class="p-3">Automática</td>
+                                </tr>
+                                <tr class="hover:bg-purple-900/20">
+                                    <td class="p-3">💻 <strong>Node.js local</strong></td>
+                                    <td class="p-3">Media</td>
+                                    <td class="p-3">Desarrollo o pruebas</td>
+                                    <td class="p-3">Manual (carpeta local)</td>
+                                    <td class="p-3">Manual</td>
+                                </tr>
+                                <tr class="hover:bg-purple-900/20">
+                                    <td class="p-3">🐳 <strong>Docker</strong></td>
+                                    <td class="p-3">Alta</td>
+                                    <td class="p-3">Producción o equipos técnicos</td>
+                                    <td class="p-3">Volúmenes persistentes</td>
+                                    <td class="p-3">Actualización simple de imagen</td> <!-- TEXTO CORREGIDO -->
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
+                
+                <!-- RECURSOS DE DOSTIN HURTADO AÑADIDOS AQUÍ -->
+                <div class="border-t border-purple-500/30 pt-6 mt-6 space-y-4">
+                    <p class="text-lg font-semibold text-pink-400">Recursos Adicionales:</p>
+                    <div>
+                        <span class="font-bold text-gray-300">Documentación de Hosting:</span>
+                        <a href="https://docs.n8n.io/hosting/" target="_blank" class="text-blue-400 hover:underline ml-2">https://docs.n8n.io/hosting/</a>
+                    </div>
+                    <div>
+                        <span class="font-bold text-gray-300">Tutorial Docker/Node:</span>
+                        <a href="https://dostinhurtado.com/site/tutoriales-gratis-online/tutoriales-diseno-web/como-instalar-n8n-gratis/" target="_blank" class="text-blue-400 hover:underline ml-2">dostinhurtado.com/.../como-instalar-n8n-gratis/</a>
+                        <p class="text-sm text-purple-300 mt-1">Autor: Dostin Hurtado</p>
+                    </div>
+                    <div>
+                        <span class="font-bold text-gray-300">Video Tutorial (Docker/Node):</span>
+                        <a href="https://youtu.be/q93cLvSghqI" target="_blank" class="text-blue-400 hover:underline ml-2">https://youtu.be/q93cLvSghqI</a>
+                        <p class="text-sm text-purple-300 mt-1">Autor: Dostin Hurtado</p>
+                    </div>
+                </div>
+                <!-- FIN DE RECURSOS ADICIONALES -->
+
             </div>
         </div>
         
-        <!-- Sección de Documentación -->
-        <div id="documentacion" class="section-content">
-             <h2 class="text-3xl font-bold mb-6 text-white neon-text">Documentación Técnica</h2>
-             <div class="glassmorphism p-8 rounded-xl space-y-6">
-                <div>
-                    <h3 class="text-xl font-semibold text-blue-400">Arquitectura del Agente</h3>
-                    <p class="mt-2 text-gray-300">El agente se basa en una arquitectura orientada a eventos. Utiliza webhooks para recibir notificaciones en tiempo real de las plataformas de redes sociales. Cada evento (nuevo mensaje, comentario, mención) activa un workflow específico en n8n.</p>
-                </div>
-                <div>
-                    <h3 class="text-xl font-semibold text-blue-400">Flujo de Trabajo Principal</h3>
-                    <p class="mt-2 text-gray-300">El workflow principal sigue estos pasos: <br>1. <strong>Trigger (Disparador):</strong> Un nodo de Webhook espera la llegada de datos. <br>2. <strong>Análisis de Mensaje:</strong> Un nodo de "Function" con código JavaScript extrae el contenido del mensaje, el remitente y otros metadatos. <br>3. <strong>Lógica Condicional:</strong> Nodos "IF" determinan el tipo de mensaje (pregunta, queja, saludo) basándose en palabras clave. <br>4. <strong>Generación de Respuesta:</strong> Dependiendo de la condición, se genera una respuesta. Esto puede ser una respuesta predefinida o una generada por IA (ej. usando un nodo de OpenAI). <br>5. <strong>Acción de Respuesta:</strong> Se utiliza el nodo de la red social correspondiente (ej. Twitter Node, Facebook Messenger Node) para enviar la respuesta.</p>
-                </div>
+        <!-- Sección El Desafío (NUEVA - VACÍA) -->
+        <div id="contexto" class="section-content">
+            <div class="glassmorphism p-8 rounded-xl max-w-4xl mx-auto">
+                <h2 class="text-3xl font-bold mb-6 text-white neon-text text-center">El Desafío: Make vs. n8n</h2>
+                <p class="text-center text-gray-300">Esta sección explicará el problema y la justificación de la migración.</p>
+                <!-- Contenido futuro irá aquí -->
             </div>
         </div>
 
-        <!-- Sección Fases del Proyecto -->
+        <!-- Sección Fases del Proyecto (INTACTA) -->
         <div id="fases" class="section-content">
             <h2 class="text-3xl font-bold mb-6 text-white neon-text">Fases del Proyecto</h2>
             <div class="space-y-8 relative">
@@ -253,7 +447,7 @@
                     <p class="mt-2 text-gray-300">Análisis de herramientas de automatización existentes, definición de los objetivos del proyecto y selección de n8n como la tecnología principal.</p>
                 </div>
                 <div class="relative pl-10">
-                     <div class="absolute left-0 top-1 flex items-center justify-center w-8 h-8 bg-pink-500 rounded-full ring-4 ring-purple-900">
+                    <div class="absolute left-0 top-1 flex items-center justify-center w-8 h-8 bg-pink-500 rounded-full ring-4 ring-purple-900">
                         <span class="text-white font-bold">2</span>
                     </div>
                     <h3 class="text-xl font-semibold text-pink-400">Fase 2: Desarrollo del Prototipo</h3>
@@ -276,81 +470,95 @@
             </div>
         </div>
 
-        <!-- Sección de Demo Interactiva -->
-        <div id="demo" class="section-content">
-            <h2 class="text-3xl font-bold mb-6 text-white neon-text">Demo Interactiva con IA</h2>
-            <div class="glassmorphism rounded-xl flex flex-col h-[60vh] max-w-2xl mx-auto">
-                <div class="p-4 border-b border-purple-500/50">
-                    <h3 class="font-semibold text-white">Simulador de Agente (Potenciado por Gemini)</h3>
-                    <p class="text-sm text-green-400">● Online</p>
-                </div>
-                <div id="chat-window" class="flex-1 p-4 space-y-4 overflow-y-auto">
-                    <!-- Mensajes de chat se añadirán aquí -->
-                    <div class="flex justify-start">
-                        <div class="bg-purple-800 rounded-lg p-3 max-w-xs">
-                            <p class="text-sm">Hola, soy una simulación del agente n8n, potenciado por la IA de Gemini. ¡Pregúntame lo que quieras!</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="p-4 border-t border-purple-500/50">
-                    <div class="flex space-x-2">
-                        <input id="chat-input" type="text" placeholder="Escribe tu mensaje aquí..." class="flex-1 bg-gray-900/50 border-purple-400 rounded-lg py-2 px-3 text-white focus:outline-none focus:ring-pink-500 focus:border-pink-500">
-                        <button id="send-btn" class="bg-pink-600 text-white font-bold p-3 rounded-lg neon-glow hover:bg-pink-700 transition-all duration-300">
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path></svg>
-                        </button>
-                    </div>
-                </div>
+        <!-- Sección Workflow WhatsApp (NUEVA - VACÍA) -->
+        <div id="workflow-wpp" class="section-content">
+            <div class="glassmorphism p-8 rounded-xl max-w-4xl mx-auto">
+                <h2 class="text-3xl font-bold mb-6 text-white neon-text text-center">Workflow: WhatsApp</h2>
+                <p class="text-center text-gray-300">Esta sección detallará el flujo de trabajo de WhatsApp.</p>
+                <!-- Contenido futuro irá aquí -->
             </div>
         </div>
 
-        <!-- Sección Panel Admin -->
-        <div id="panel" class="section-content">
-            <h2 class="text-3xl font-bold mb-6 text-white neon-text">Panel de Administración (Simulado)</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <!-- Stat Card -->
-                <div class="glassmorphism p-6 rounded-xl text-center">
-                    <h3 class="text-lg font-semibold text-blue-300">Mensajes Procesados</h3>
-                    <p class="text-4xl font-bold mt-2">1,287</p>
-                </div>
-                 <!-- Stat Card -->
-                <div class="glassmorphism p-6 rounded-xl text-center">
-                    <h3 class="text-lg font-semibold text-blue-300">Tasa de Automatización</h3>
-                    <p class="text-4xl font-bold mt-2">82%</p>
-                </div>
-                 <!-- Stat Card -->
-                <div class="glassmorphism p-6 rounded-xl text-center">
-                    <h3 class="text-lg font-semibold text-blue-300">Tiempo de Respuesta Prom.</h3>
-                    <p class="text-4xl font-bold mt-2">3.5s</p>
-                </div>
-            </div>
-            <div class="mt-8 glassmorphism p-6 rounded-xl">
-                 <h3 class="text-lg font-semibold text-pink-400 mb-4">Actividad por Hora</h3>
-                 <canvas id="activityChart"></canvas>
+        <!-- Sección Workflow Instagram (NUEVA - VACÍA) -->
+        <div id="workflow-ig" class="section-content">
+            <div class="glassmorphism p-8 rounded-xl max-w-4xl mx-auto">
+                <h2 class="text-3xl font-bold mb-6 text-white neon-text text-center">Workflow: Instagram</h2>
+                <p class="text-center text-gray-300">Esta sección detallará el flujo de trabajo de Instagram.</p>
+                <!-- Contenido futuro irá aquí -->
             </div>
         </div>
 
+        <!-- Sección Workflow Messenger (NUEVA - VACÍA) -->
+        <div id="workflow-msg" class="section-content">
+            <div class="glassmorphism p-8 rounded-xl max-w-4xl mx-auto">
+                <h2 class="text-3xl font-bold mb-6 text-white neon-text text-center">Workflow: Messenger</h2>
+                <p class="text-center text-gray-300">Esta sección detallará el flujo de trabajo de Facebook Messenger.</p>
+                <!-- Contenido futuro irá aquí -->
+            </div>
+        </div>
 
-        <!-- Sección de Contacto -->
+        <!-- Sección Resultados (NUEVA - VACÍA) -->
+        <div id="resultados" class="section-content">
+            <div class="glassmorphism p-8 rounded-xl max-w-4xl mx-auto">
+                <h2 class="text-3xl font-bold mb-6 text-white neon-text text-center">Resultados</h2>
+                <p class="text-center text-gray-300">Esta sección mostrará los resultados e impacto del proyecto.</p>
+                <!-- Contenido futuro irá aquí -->
+            </div>
+        </div>
+
+        <!-- Sección de Contacto (CORREGIDA) -->
         <div id="contacto" class="section-content">
-            <h2 class="text-3xl font-bold mb-6 text-white neon-text">Contacto y Dudas</h2>
-            <div class="glassmorphism p-8 rounded-xl max-w-lg mx-auto">
-                <p class="text-center mb-6">Si tienes alguna pregunta sobre el proyecto, no dudes en contactarme.</p>
-                <form>
-                    <div class="mb-4">
-                        <label class="block text-sm font-medium text-gray-300">Tu Email</label>
-                        <input type="email" class="mt-1 block w-full bg-gray-900/50 border-purple-400 rounded-md shadow-sm py-2 px-3 text-white focus:outline-none focus:ring-pink-500 focus:border-pink-500">
-                    </div>
-                    <div class="mb-4">
-                         <label class="block text-sm font-medium text-gray-300">Mensaje</label>
-                         <textarea rows="4" class="mt-1 block w-full bg-gray-900/50 border-purple-400 rounded-md shadow-sm py-2 px-3 text-white focus:outline-none focus:ring-pink-500 focus:border-pink-500"></textarea>
-                    </div>
-                    <div class="text-center">
-                        <button type="submit" class="bg-purple-600 text-white font-bold py-3 px-6 rounded-lg neon-glow hover:bg-purple-700 transition-all duration-300">
-                            Enviar Mensaje
-                        </button>
-                    </div>
-                </form>
+          <!-- Título movido adentro y centrado -->
+          <div class="glassmorphism p-8 rounded-xl max-w-lg mx-auto">
+            <h2 class="text-3xl font-bold mb-6 text-white neon-text text-center">Contacto</h2> <!-- Título cambiado y centrado -->
+            
+            <!-- Banner de notificación (NUEVA UBICACIÓN) -->
+            <div id="notification-banner" class="hidden p-4 rounded-lg shadow-lg text-white w-full text-center mb-6">
+                <p id="notification-message"></p>
             </div>
+
+            <p class="text-center mb-6">
+              Si tienes alguna pregunta sobre el proyecto, no dudes en contactarme.
+            </p>
+        
+            <!-- Formulario -->
+            <form id="contact-form" action="https://formsubmit.co/ajax/antoniojosuerp@ufps.edu.co" method="POST">
+              <div class="mb-4">
+                <label for="email" class="block text-sm font-medium text-gray-300">Tu Email</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  required
+                  class="mt-1 block w-full bg-gray-900/50 border-purple-400 rounded-md shadow-sm py-2 px-3 text-white focus:outline-none focus:ring-pink-500 focus:border-pink-500"
+                />
+              </div>
+        
+              <div class="mb-4">
+                <label for="message" class="block text-sm font-medium text-gray-300">Mensaje</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="4"
+                  required
+                  class="mt-1 block w-full bg-gray-900/50 border-purple-400 rounded-md shadow-sm py-2 px-3 text-white focus:outline-none focus:ring-pink-500 focus:border-pink-500"
+                ></textarea>
+              </div>
+        
+              <!-- Opcional: asunto y auto-respuesta -->
+              <input type="hidden" name="_subject" value="Nuevo mensaje del Proyecto N8N">
+              <input type="hidden" name="_autoresponse" value="¡Hola! Recibimos tu mensaje, te responderé pronto.">
+        
+              <div class="text-center">
+                <button
+                  type="submit"
+                  class="bg-purple-600 text-white font-bold py-3 px-6 rounded-lg neon-glow hover:bg-purple-700 transition-all duration-300"
+                >
+                  Enviar Mensaje
+                </button>
+              </div>
+            </form>
+          </div>
         </div>
 
     </main>
@@ -363,7 +571,15 @@
             sections.forEach(section => {
                 section.classList.remove('active');
             });
-            document.getElementById(sectionId).classList.add('active');
+            const activeSection = document.getElementById(sectionId);
+            if (activeSection) {
+                activeSection.classList.add('active');
+            } else {
+                console.warn(`Section with ID "${sectionId}" not found.`);
+                // Show 'inicio' as a fallback
+                document.getElementById('inicio').classList.add('active');
+            }
+
 
             navLinks.forEach(link => {
                 link.classList.remove('active');
@@ -371,6 +587,11 @@
                     link.classList.add('active');
                 }
             });
+            
+            // Fallback for active link if section not found
+            if (!activeSection) {
+                document.querySelector('.nav-link[data-section="inicio"]').classList.add('active');
+            }
         }
         
         navLinks.forEach(link => {
@@ -378,202 +599,63 @@
                 e.preventDefault();
                 const sectionId = e.currentTarget.dataset.section;
                 showSection(sectionId);
-                
-                if (sectionId === 'panel') {
-                    initChart();
-                }
             });
         });
 
-        // --- Gemini API Integration ---
-        const apiKey = ""; // Will be provided by the execution environment
-        const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`;
+        // --- Lógica del Formulario de Contacto ---
+        const contactForm = document.getElementById('contact-form');
+        const notificationBanner = document.getElementById('notification-banner');
+        
+        function showNotification(message, isError = false) {
+            // notificationBanner ya está definida globalmente
+            const notificationMessage = document.getElementById('notification-message') || notificationBanner; // Asegura compatibilidad
+            
+            notificationMessage.textContent = message;
+            notificationBanner.classList.remove('hidden');
+            notificationBanner.classList.remove('bg-green-600', 'bg-red-600');
+            notificationBanner.classList.add(isError ? 'bg-red-600' : 'bg-green-600');
 
-        async function callGemini(prompt, systemPrompt, maxRetries = 3) {
-            let attempt = 0;
-            while (attempt < maxRetries) {
+            setTimeout(() => notificationBanner.classList.add('hidden'), 5000);
+        }
+
+        if (contactForm) {
+            contactForm.addEventListener('submit', async (e) => {
+                e.preventDefault();
+
+                const button = contactForm.querySelector('button[type="submit"]');
+                const originalText = button.innerHTML;
+                button.innerHTML = 'Enviando...';
+                button.disabled = true;
+
                 try {
-                    const payload = {
-                        contents: [{ parts: [{ text: prompt }] }],
-                    };
-                    if (systemPrompt) {
-                        payload.systemInstruction = {
-                            parts: [{ text: systemPrompt }]
-                        };
-                    }
-
-                    const response = await fetch(apiUrl, {
+                    const res = await fetch(contactForm.action, {
                         method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify(payload)
+                        body: new FormData(contactForm),
+                        headers: { 'Accept': 'application/json' }
                     });
 
-                    if (!response.ok) {
-                        if (response.status === 429 || response.status >= 500) {
-                            const delay = Math.pow(2, attempt) * 1000 + Math.random() * 1000;
-                            await new Promise(resolve => setTimeout(resolve, delay));
-                            attempt++;
-                            continue;
-                        }
-                        throw new Error(`API call failed with status: ${response.status}`);
+                    if (res.ok) {
+                        showNotification('✅ ¡Mensaje enviado correctamente!');
+                        contactForm.reset();
+                    } else {
+                        showNotification('❌ Error al enviar el mensaje.', true);
                     }
-
-                    const result = await response.json();
-                    const text = result.candidates?.[0]?.content?.parts?.[0]?.text;
-                    return text || "No pude generar una respuesta.";
-
-                } catch (error) {
-                    console.error(`Attempt ${attempt + 1} failed:`, error);
-                    attempt++;
-                    if (attempt >= maxRetries) {
-                        return "Hubo un error al contactar a la IA. Por favor, inténtalo de nuevo más tarde.";
-                    }
-                }
-            }
-        }
-
-        // --- Lógica de la Demo Interactiva ---
-        const chatWindow = document.getElementById('chat-window');
-        const chatInput = document.getElementById('chat-input');
-        const sendBtn = document.getElementById('send-btn');
-        const generateResponseBtn = document.getElementById('generate-response-btn');
-        const defaultResponseTextarea = document.getElementById('default-response-textarea');
-        
-        function addMessage(text, sender) {
-            const messageWrapper = document.createElement('div');
-            messageWrapper.className = `flex ${sender === 'user' ? 'justify-end' : 'justify-start'}`;
-
-            const messageBubble = document.createElement('div');
-            messageBubble.className = `${sender === 'user' ? 'bg-pink-600' : 'bg-purple-800'} rounded-lg p-3 max-w-xs`;
-            
-            const messageText = document.createElement('p');
-            messageText.className = 'text-sm';
-            messageText.innerText = text;
-            
-            messageBubble.appendChild(messageText);
-            messageWrapper.appendChild(messageBubble);
-            chatWindow.appendChild(messageWrapper);
-            
-            chatWindow.scrollTop = chatWindow.scrollHeight;
-        }
-
-        function addTypingIndicator() {
-            const messageWrapper = document.createElement('div');
-            messageWrapper.className = 'flex justify-start';
-            messageWrapper.id = 'typing-indicator';
-
-            const messageBubble = document.createElement('div');
-            messageBubble.className = 'bg-purple-800 rounded-lg p-3 max-w-xs';
-            messageBubble.innerHTML = '<p class="text-sm"><span class="typing-dot">.</span><span class="typing-dot">.</span><span class="typing-dot">.</span></p>';
-            
-            messageWrapper.appendChild(messageBubble);
-            chatWindow.appendChild(messageWrapper);
-            
-            chatWindow.scrollTop = chatWindow.scrollHeight;
-        }
-        
-        function removeTypingIndicator() {
-            const indicator = document.getElementById('typing-indicator');
-            if (indicator) {
-                indicator.remove();
-            }
-        }
-
-        async function handleSend() {
-            const userInput = chatInput.value.trim();
-            if (userInput === '') return;
-            
-            addMessage(userInput, 'user');
-            chatInput.value = '';
-            chatInput.disabled = true;
-            sendBtn.disabled = true;
-
-            addTypingIndicator();
-
-            const systemPrompt = "Eres un amigable y eficiente agente de servicio al cliente para una empresa de tecnología. Responde a las consultas de los usuarios de manera concisa, profesional y útil. Mantén tus respuestas breves, idealmente en una o dos oraciones.";
-            const botReply = await callGemini(userInput, systemPrompt);
-            
-            removeTypingIndicator();
-            addMessage(botReply, 'bot');
-
-            chatInput.disabled = false;
-            sendBtn.disabled = false;
-            chatInput.focus();
-        }
-
-        sendBtn.addEventListener('click', handleSend);
-        chatInput.addEventListener('keypress', (e) => {
-            if (e.key === 'Enter') handleSend();
-        });
-
-        generateResponseBtn.addEventListener('click', async () => {
-            const originalText = generateResponseBtn.innerHTML;
-            generateResponseBtn.innerHTML = 'Generando...';
-            generateResponseBtn.disabled = true;
-
-            const prompt = "Actúa como un experto en comunicación. Escribe una opción para un mensaje de respuesta automática predeterminada para redes sociales. El tono debe ser amigable y profesional. El mensaje debe informar al usuario que su consulta ha sido recibida y que será atendida pronto. Devuelve solo el texto del mensaje, sin numeración ni introducciones.";
-            const generatedText = await callGemini(prompt);
-            
-            defaultResponseTextarea.value = generatedText;
-
-            generateResponseBtn.innerHTML = originalText;
-            generateResponseBtn.disabled = false;
-        });
-
-        // --- Lógica del Gráfico del Panel Admin ---
-        let activityChartInstance = null;
-        function initChart() {
-            const ctx = document.getElementById('activityChart').getContext('2d');
-            
-            if (activityChartInstance) {
-                activityChartInstance.destroy();
-            }
-
-            const gradient = ctx.createLinearGradient(0, 0, 0, 400);
-            gradient.addColorStop(0, 'rgba(233, 30, 99, 0.5)');
-            gradient.addColorStop(1, 'rgba(233, 30, 99, 0)');
-
-            activityChartInstance = new Chart(ctx, {
-                type: 'line',
-                data: {
-                    labels: ['00:00', '02:00', '04:00', '06:00', '08:00', '10:00', '12:00', '14:00', '16:00', '18:00', '20:00', '22:00'],
-                    datasets: [{
-                        label: 'Mensajes por Hora',
-                        data: [12, 19, 8, 15, 22, 30, 45, 50, 60, 40, 32, 25],
-                        backgroundColor: gradient,
-                        borderColor: '#e91e63',
-                        borderWidth: 2,
-                        pointBackgroundColor: '#fff',
-                        pointBorderColor: '#e91e63',
-                        tension: 0.4,
-                        fill: true
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    scales: {
-                        y: {
-                            beginAtZero: true,
-                            grid: { color: 'rgba(255,255,255,0.1)' },
-                            ticks: { color: '#d1d5db' }
-                        },
-                        x: {
-                            grid: { color: 'rgba(255,255,255,0.1)' },
-                            ticks: { color: '#d1d5db' }
-                        }
-                    },
-                    plugins: {
-                        legend: {
-                            display: false
-                        }
-                    }
+                } catch (err) {
+                    console.error(err);
+                    showNotification('⚠️ Hubo un problema con la conexión.', true);
+                } finally {
+                    button.innerHTML = originalText;
+                    button.disabled = false;
                 }
             });
         }
+
+
+        // Mostrar 'inicio' por defecto al cargar
+        document.addEventListener('DOMContentLoaded', () => {
+            showSection('inicio');
+        });
+
     </script>
 </body>
 </html>
-
-
-
-
