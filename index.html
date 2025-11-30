@@ -705,7 +705,7 @@
                             Fase 3: Pruebas e implementación en entornos reales
                         </h3>
                         <p class="mt-2 text-gray-300 leading-relaxed">
-                            Se realizaron pruebas reales desde cuentas de Facebook, Instagram y WhatsApp.
+                            Se realizaron pruebas desde cuentas de Facebook, Instagram y WhatsApp.
                             Se verificó la coherencia conversacional, tiempos de respuesta y estabilidad del agente.
                         </p>
                     </div>
@@ -744,12 +744,12 @@
         <div id="workflow-wpp" class="section-content">
     <div class="glassmorphism p-8 rounded-xl max-w-7xl mx-auto">
         <h2 class="text-3xl font-bold mb-6 text-white neon-text text-center">Tipos de API de Mensajería para WhatsApp</h2>
-        <p class="text-center text-gray-300 mb-12">Una comparativa de las tres categorías principales de APIs disponibles en el mercado.</p>
+        <p class="text-center text-gray-300 mb-12">
+            Este primer workflow es el proceso encargado de gestionar todas las interacciones provenientes del canal de WhatsApp. Antes de detallar la implementación técnica, es fundamental contextualizar la elección de la API de conexión.
+        </p>
         
-        <!-- Rejilla Comparativa -->
-        <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3 mb-12">
             
-            <!-- Columna 1: API Cloud Oficial (Meta) -->
             <div class="flex flex-col rounded-xl glassmorphism overflow-hidden border-t-4 border-blue-500 neon-glow-blue">
                 <div class="p-6 flex-grow">
                     <div class="flex items-center space-x-3 mb-4">
@@ -759,7 +759,6 @@
                         <h3 class="text-xl font-semibold text-white">API Cloud Oficial (Meta)</h3>
                     </div>
                     <p class="text-sm text-gray-300 mb-6">Solución oficial, robusta y escalable de Meta para uso empresarial a gran escala.</p>
-
                     <h4 class="font-medium text-white mb-3 neon-text">Ventajas</h4>
                     <ul class="space-y-2 text-sm mb-6">
                         <li class="flex items-start">
@@ -775,7 +774,6 @@
                             <span class="text-gray-300">Permite obtener verificación oficial (tick verde).</span>
                         </li>
                     </ul>
-
                     <h4 class="font-medium text-white mb-3 neon-text">Desventajas</h4>
                     <ul class="space-y-2 text-sm">
                         <li class="flex items-start">
@@ -788,7 +786,7 @@
                             <svg class="h-5 w-5 flex-shrink-0 mr-2 text-red-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                                 <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/>
                             </svg>
-                            <span class="text-gray-300">Costo basado en conversaciones, oneroso para pruebas.</span>
+                            <span class="text-gray-300">Costo basado en conversaciones, costoso para pruebas.</span>
                         </li>
                     </ul>
                 </div>
@@ -798,8 +796,6 @@
                     </p>
                 </div>
             </div>
-
-            <!-- Columna 2: Proveedores BSP -->
             <div class="flex flex-col rounded-xl glassmorphism overflow-hidden border-t-4 border-green-500 neon-glow">
                 <div class="p-6 flex-grow">
                     <div class="flex items-center space-x-3 mb-4">
@@ -809,7 +805,6 @@
                         <h3 class="text-xl font-semibold text-white">Proveedores BSP</h3>
                     </div>
                     <p class="text-sm text-gray-300 mb-6">Intermediarios (Wati, Twilio) que ofrecen la API de Meta con plataformas amigables y soporte.</p>
-
                     <h4 class="font-medium text-white mb-3 neon-text">Ventajas</h4>
                     <ul class="space-y-2 text-sm mb-6">
                         <li class="flex items-start">
@@ -825,7 +820,6 @@
                             <span class="text-gray-300">Incluyen interfaces de usuario y bandejas multiagente.</span>
                         </li>
                     </ul>
-
                     <h4 class="font-medium text-white mb-3 neon-text">Desventajas</h4>
                     <ul class="space-y-2 text-sm">
                         <li class="flex items-start">
@@ -848,9 +842,7 @@
                     </p>
                 </div>
             </div>
-
-            <!-- Columna 3: APIs de Terceros (No Oficiales) -->
-            <div class="flex flex-col rounded-xl glassmorphism overflow-hidden border-t-4 border-yellow-500">
+            <div class="flex flex-col rounded-xl glassmorphism overflow-hidden border-t-4 border-red-500 neon-glow">
                 <div class="p-6 flex-grow">
                     <div class="flex items-center space-x-3 mb-4">
                         <svg class="h-8 w-8 text-yellow-400 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
@@ -859,7 +851,6 @@
                         <h3 class="text-xl font-semibold text-white">APIs de Terceros (No Oficial)</h3>
                     </div>
                     <p class="text-sm text-gray-300 mb-6">Soluciones que emulan WhatsApp Web (ej. Baileys) para ofrecer una API REST.</p>
-
                     <h4 class="font-medium text-white mb-3 neon-text">Ventajas</h4>
                     <ul class="space-y-2 text-sm mb-6">
                         <li class="flex items-start">
@@ -875,7 +866,6 @@
                             <span class="text-gray-300">Económica, a menudo con tarifa plana.</span>
                         </li>
                     </ul>
-
                     <h4 class="font-medium text-white mb-3 neon-text">Desventajas</h4>
                     <ul class="space-y-2 text-sm">
                         <li class="flex items-start">
@@ -898,29 +888,402 @@
                     </p>
                 </div>
             </div>
-
+            
         </div>
+
+        <div> 
+            <h3 class="text-center text-2xl font-semibold text-pink-400 mb-4">Arquitectura lógica del flujo</h3>
+            <p class="text-gray-300 mb-6">
+                El sistema se diseñó bajo una arquitectura de procesamiento secuencial organizada en cuatro niveles o capas funcionales:
+            </p>
+            
+            
+            <div class="space-y-6">
+                <div class="bg-white/5 p-5 rounded-lg border-l-4 border-blue-500">
+                    <h4 class="font-semibold text-blue-400 mb-3 text-lg">1. Capa de entrada</h4>
+                    <p class="text-gray-300 text-sm mb-4">
+                        Recepción de mensajes mediante webhooks, validación de integridad y clasificación del tipo de mensaje (texto, audio o imagen).
+                    </p>
+                    <ul class="space-y-2 text-gray-300 text-sm ml-4">
+                        <li><strong>Nodo 1 – Webhook:</strong> Recibe mensajes entrantes de WhatsApp.</li>
+                        <li><strong>Nodo 2 – Filtro mensajes propios:</strong> Evita procesar mensajes enviados por el bot.</li>
+                        <li><strong>Nodo 3 – Confirmar recibido:</strong> Envía respuesta 200 para evitar reintentos.</li>
+                        <li><strong>Nodo 4 – Clasificador de mensaje:</strong> Detecta si es texto, audio o imagen.</li>
+                    </ul>
+                </div>
+                <div class="bg-white/5 p-5 rounded-lg border-l-4 border-purple-500">
+                    <h4 class="font-semibold text-purple-400 mb-3 text-lg">2. Capa de procesamiento</h4>
+                    <p class="text-gray-300 text-sm mb-4">
+                        Conversión y normalización de formatos. Procesa audio con Whisper para transcripción e imágenes para análisis de contenido mediante modelos de visión.
+                    </p>
+                    
+                    <div class="ml-4 space-y-4">
+                        <div>
+                            <p class="font-medium text-gray-200 mb-2">Texto</p>
+                            <ul class="space-y-1 text-gray-300 text-sm ml-4">
+                                <li><strong>Nodo 5 – Mapear texto:</strong> Extrae mensaje y número del cliente.</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <p class="font-medium text-gray-200 mb-2">Audio</p>
+                            <ul class="space-y-1 text-gray-300 text-sm ml-4">
+                                <li><strong>Nodo 6 – Descifrar audio:</strong> Wasender desencripta el archivo.</li>
+                                <li><strong>Nodo 7 – Descargar audio:</strong> Obtiene el audio descifrado.</li>
+                                <li><strong>Nodo 8 – Transcribir audio:</strong> Convierte audio a texto (Whisper).</li>
+                                <li><strong>Nodo 9 – Mapear audio:</strong> Prepara el texto transcrito para el agente.</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <p class="font-medium text-gray-200 mb-2">Imagen</p>
+                            <ul class="space-y-1 text-gray-300 text-sm ml-4">
+                                <li><strong>Nodo 10 – Descifrar imagen:</strong> Wasender desencripta la imagen.</li>
+                                <li><strong>Nodo 11 – Descargar imagen:</strong> Obtiene la imagen descifrada.</li>
+                                <li><strong>Nodo 12 – Analizar imagen:</strong> IA extrae datos del comprobante (JSON).</li>
+                                <li><strong>Nodo 13 – Mapear imagen:</strong> Envía esos datos al agente IA.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white/5 p-5 rounded-lg border-l-4 border-orange-500">
+                    <h4 class="font-semibold text-orange-400 mb-3 text-lg">3. Capa de agente IA</h4>
+                    <p class="text-gray-300 text-sm mb-4">
+                        Núcleo conversacional con memoria persistente en Redis. Incluye herramientas especializadas para consultar inventarios, calcular envíos y registrar ventas.
+                    </p>
+                    <ul class="space-y-2 text-gray-300 text-sm ml-4">
+                        <li><strong>Nodo 14 – Agente IA – Principal:</strong> Interpreta intención, usa herramientas y genera respuesta.</li>
+                        <li><strong>Nodo 15 – Cerebro IA principal:</strong> Modelo Gemini para respuestas.</li>
+                        <li><strong>Nodo 16 – Cerebro IA fallback:</strong> Modelo GPT-4 si Gemini falla.</li>
+                        <li><strong>Nodo 17 – Memoria (Redis):</strong> Mantiene el contexto de conversación (8 mensajes, 20 min).</li>
+                    </ul>
+
+                    <div class="mt-4 pt-4 border-t border-white/10">
+                        <p class="font-medium text-lime-400 mb-2">🟩 Herramientas del Agente (Tools)</p>
+                        <ul class="space-y-1 text-gray-300 text-sm ml-4">
+                            <li><strong>Tool 1 – Inventario Femenino:</strong> Consulta productos (hoja Femenino).</li>
+                            <li><strong>Tool 2 – Inventario Masculino:</strong> Consulta productos (hoja Masculino).</li>
+                            <li><strong>Tool 3 – Tarifa de envíos:</strong> Devuelve costo según ciudad.</li>
+                            <li><strong>Tool 4 – Registro de ventas:</strong> Guarda datos de la venta en Google Sheets.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="bg-white/5 p-5 rounded-lg border-l-4 border-green-500">
+                    <h4 class="font-semibold text-green-400 mb-3 text-lg">4. Capa de salida</h4>
+                    <p class="text-gray-300 text-sm mb-4">
+                        Normalización de respuestas y envío final adaptando el formato (texto, botones o multimedia) según el canal correspondiente.
+                    </p>
+                    <ul class="space-y-2 text-gray-300 text-sm ml-4">
+                        <li><strong>Nodo 18 – Normalizar respuesta:</strong> Unifica número y texto de salida.</li>
+                        <li><strong>Nodo 19 – Respuesta al cliente:</strong> Envía mensaje final por WhatsApp.</li>
+                        <li><strong>Nodo 20 – Confirmar Recibido Final:</strong> Cierra el flujo correctamente.</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white/5 p-5 rounded-lg border-l-4 border-amber-500">
+                    <h4 class="font-semibold text-amber-400 mb-3 text-lg">🟧 Nodos Auxiliares</h4>
+                    <ul class="space-y-2 text-gray-300 text-sm ml-4">
+                        <li><strong>Nodo Aux – Interruptor de mantenimiento:</strong> Activa o desactiva el modo mantenimiento.</li>
+                        <li><strong>Nodo Aux – ¿Modo mantenimiento activo?:</strong> Detiene el flujo si está habilitado.</li>
+                    </ul>
+                </div>
+
+                <div class="my-10">
+            <p class="text-center text-2xl font-semibold text-pink-400 mb-4">Video agente funcional</p>
+
+            <div class="relative pb-[56.25%] h-0 overflow-hidden rounded-xl shadow-xl border border-purple-500/30">
+                <iframe 
+                    src="https://drive.google.com/file/d/1bZlz9NeXGSwkB5spV6VojwokDyzjdcL8/preview"
+                    class="absolute top-0 left-0 w-full h-full"
+                    allow="autoplay">
+                </iframe>
+            </div>
+        </div>
+            </div>
+        </div>
+        
+    </div> 
     </div>
-</div>
 
         <!-- Sección Workflow Instagram (NUEVA - VACÍA) -->
         <div id="workflow-ig" class="section-content">
-            <div class="glassmorphism p-8 rounded-xl max-w-4xl mx-auto">
-                <h2 class="text-3xl font-bold mb-6 text-white neon-text text-center">Workflow: Instagram</h2>
-                <p class="text-center text-gray-300">Esta sección detallará el flujo de trabajo de Instagram.</p>
-                <!-- Contenido futuro irá aquí -->
+    <div class="glassmorphism p-8 rounded-xl max-w-4xl mx-auto">
+        <h2 class="text-3xl font-bold mb-6 text-white neon-text text-center">Workflow: Instagram</h2>
+        <p class="text-center text-gray-300 mb-12">Este workflow es el proceso encargado de gestionar todas las interacciones provenientes del canal de Instagram. Antes de detallar la implementación técnica, es fundamental contextualizar la API oficial de Meta.</p>
+
+        <div class="mb-12">
+            <h3 class="text-2xl text-center font-semibold text-blue-400 mb-4">Instagram Graph API (Oficial)</h3>
+            <p class="text-gray-300 mb-4">
+                Para la integración de Instagram, a diferencia de la estrategia utilizada en WhatsApp, se seleccionó la ruta oficial a través de Meta for Developers (Graph API). Se descartaron las soluciones de terceros y se optó por la infraestructura nativa debido a tres factores técnicos decisivos:
+            </p>
+            <ul class="space-y-2 text-sm text-gray-300 ml-4 list-disc list-inside">
+                <li>
+                    <span class="font-medium text-green-400">Gratuidad y Sostenibilidad:</span> A diferencia de WhatsApp Cloud, la API de Instagram es gratuita para volúmenes de mensajería estándar.
+                </li>
+                <li>
+                    <span class="font-medium text-green-400">Seguridad:</span> Garantiza estabilidad total sin el riesgo de bloqueo de cuenta común en herramientas no oficiales.
+                </li>
+                <li>
+                    <span class="font-medium text-green-400">Capacidad de Eventos:</span> Es la única interfaz que permite capturar interacciones complejas como respuestas a historias, menciones y reacciones, las cuales son procesadas en este flujo mediante una conexión segura de Webhook validada por token.
+                </li>
+            </ul>
+        </div>
+
+        <div>
+            <h3 class="text-2xl text-center font-semibold text-pink-400 mb-4">Arquitectura lógica del flujo</h3>
+            <p class="text-gray-300 mb-6">
+                El sistema se diseñó bajo una arquitectura de procesamiento secuencial organizada en cuatro niveles o capas funcionales:
+            </p>
+            
+            <div class="space-y-6">
+                
+                <div class="bg-white/5 p-5 rounded-lg border-l-4 border-blue-500">
+                    <h4 class="font-semibold text-blue-400 mb-3 text-lg">1. Capa de entrada</h4>
+                    <p class="text-gray-300 text-sm mb-4">
+                        Recepción de eventos mediante webhooks oficiales, validación del Hub Challenge y filtrado de mensajes provenientes de Instagram.
+                    </p>
+                    <ul class="space-y-2 text-gray-300 text-sm ml-4">
+                        <li><strong>Nodo 1 – Webhook (Validación):</strong> Recibe la verificación inicial de Meta y mensajes entrantes en /instagram-test.</li>
+                        <li><strong>Nodo 2 – IF (Hub Challenge):</strong> Comprueba hub.mode y hub.verify_token para validar que Meta sea legítimo.</li>
+                        <li><strong>Nodo 3 – Respond to Webhook (Validación):</strong> Devuelve hub.challenge para completar la validación del webhook.</li>
+                        <li><strong>Nodo 4 – Mensaje cliente:</strong> Captura mensajes POST provenientes de Instagram.</li>
+                        <li><strong>Nodo 5 – IF Anti-Eco:</strong> Filtra mensajes propios, notificaciones de entrega y lecturas.</li>
+                        <li><strong>Nodo 6 – Clasificador de mensaje:</strong> Determina si es mensaje de texto, audio o imagen.</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white/5 p-5 rounded-lg border-l-4 border-purple-500">
+                    <h4 class="font-semibold text-purple-400 mb-3 text-lg">2. Capa de procesamiento</h4>
+                    <p class="text-gray-300 text-sm mb-4">
+                        Normalización de formato y extracción de contenido según tipo de mensaje. Maneja transcripción de audio e interpretación de imágenes.
+                    </p>
+                    
+                    <div class="ml-4 space-y-4">
+                        <div>
+                            <p class="font-medium text-gray-200 mb-2">Texto</p>
+                            <ul class="space-y-1 text-gray-300 text-sm ml-4">
+                                <li><strong>Nodo 7 – Mapear texto:</strong> Extrae el texto del cliente y su sender_id.</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <p class="font-medium text-gray-200 mb-2">Audio</p>
+                            <ul class="space-y-1 text-gray-300 text-sm ml-4">
+                                <li><strong>Nodo 8 – Obtener audio:</strong> Descarga el archivo desde Meta.</li>
+                                <li><strong>Nodo 9 – Transcribir audio:</strong> Convierte audio a texto utilizando Whisper.</li>
+                                <li><strong>Nodo 10 – Mapear audio:</strong> Envía el texto transcrito y el ID del usuario al agente.</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <p class="font-medium text-gray-200 mb-2">Imagen</p>
+                            <ul class="space-y-1 text-gray-300 text-sm ml-4">
+                                <li><strong>Nodo 11 – Obtener imagen:</strong> Descarga la imagen en binario desde los servidores de Meta.</li>
+                                <li><strong>Nodo 12 – Analizar imagen:</strong> GPT-4 Vision extrae los datos del comprobante (JSON: monto, id, nombre, validación).</li>
+                                <li><strong>Nodo 13 – Mapear imagen:</strong> Normaliza el JSON y lo envía al agente IA.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white/5 p-5 rounded-lg border-l-4 border-orange-500">
+                    <h4 class="font-semibold text-orange-400 mb-3 text-lg">3. Capa de agente IA</h4>
+                    <p class="text-gray-300 text-sm mb-4">
+                        Núcleo conversacional con memoria en Redis, múltiples herramientas conectadas y modelos avanzados para mantener coherencia entre canales.
+                    </p>
+                    <ul class="space-y-2 text-gray-300 text-sm ml-4">
+                        <li><strong>Nodo 14 – Agente IA Principal:</strong> Interpreta intención, usa herramientas y genera las respuestas.</li>
+                        <li><strong>Nodo 15 – Cerebro principal:</strong> Modelo Gemini.</li>
+                        <li><strong>Nodo 16 – Cerebro fallback:</strong> GPT-4 si Gemini falla.</li>
+                        <li><strong>Nodo 17 – Memoria (Redis):</strong> Guarda contexto (8 mensajes, 20 min de TTL).</li>
+                    </ul>
+
+                    <div class="mt-4 pt-4 border-t border-white/10">
+                        <p class="font-medium text-lime-400 mb-2">🟩 Herramientas del Agente (Tools)</p>
+                        <ul class="space-y-1 text-gray-300 text-sm ml-4">
+                            <li><strong>Tool 1 – Inventario Femenino:</strong> Consulta productos del inventario (Hoja Femenino).</li>
+                            <li><strong>Tool 2 – Inventario Masculino:</strong> Consulta productos (Hoja Masculino).</li>
+                            <li><strong>Tool 3 – Tarifa de envíos:</strong> Retorna costo según la ciudad.</li>
+                            <li><strong>Tool 4 – Registro de ventas:</strong> Registra ventas con datos del cliente y compra.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="bg-white/5 p-5 rounded-lg border-l-4 border-green-500">
+                    <h4 class="font-semibold text-green-400 mb-3 text-lg">4. Capa de salida</h4>
+                    <p class="text-gray-300 text-sm mb-4">
+                        Normalización del texto y envío final mediante la API oficial de Meta usando Page Access Token.
+                    </p>
+                    <ul class="space-y-2 text-gray-300 text-sm ml-4">
+                        <li><strong>Nodo 18 – Limpiar respuesta:</strong> Elimina Markdown, normaliza saltos de línea y arma el mensaje final.</li>
+                        <li><strong>Nodo 19 – Respuesta al cliente:</strong> Envía el mensaje al usuario vía Instagram utilizando el endpoint oficial.</li>
+                        <li><strong>Nodo 20 – Confirmar Recibido Final:</strong> Cierra el flujo correctamente.</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white/5 p-5 rounded-lg border-l-4 border-amber-500">
+                    <h4 class="font-semibold text-amber-400 mb-3 text-lg">🟧 Nodos Auxiliares</h4>
+                    <ul class="space-y-2 text-gray-300 text-sm ml-4">
+                        <li><strong>Nodo Aux – Interruptor de mantenimiento:</strong> Activa/desactiva modo mantenimiento.</li>
+                        <li><strong>Nodo Aux – ¿Modo mantenimiento activo?:</strong> Si está activo, detiene el flujo completo.</li>
+                    </ul>
+                </div>
+
+                <div class="my-10">
+            <p class="text-center text-2xl font-semibold text-pink-400 mb-4">Video agente funcional</p>
+
+            <div class="relative pb-[56.25%] h-0 overflow-hidden rounded-xl shadow-xl border border-purple-500/30">
+                <iframe 
+                    src="https://drive.google.com/file/d/1rooRvNksV7VE-RoZhguL9tGkTtsT4JF8/preview"
+                    class="absolute top-0 left-0 w-full h-full"
+                    allow="autoplay">
+                </iframe>
             </div>
         </div>
 
-        <!-- Sección Workflow Messenger (NUEVA - VACÍA) -->
-        <div id="workflow-msg" class="section-content">
-            <div class="glassmorphism p-8 rounded-xl max-w-4xl mx-auto">
-                <h2 class="text-3xl font-bold mb-6 text-white neon-text text-center">Workflow: Messenger</h2>
-                <p class="text-center text-gray-300">Esta sección detallará el flujo de trabajo de Facebook Messenger.
-                </p>
-                <!-- Contenido futuro irá aquí -->
             </div>
         </div>
+
+    </div>
+</div>
+
+        <!-- Sección Workflow Messenger (NUEVA - VACÍA) -->
+        <div id="workflow-msg" class="section-content">
+    <div class="glassmorphism p-8 rounded-xl max-w-4xl mx-auto">
+        <h2 class="text-3xl font-bold mb-6 text-white neon-text text-center">Workflow: Messenger</h2>
+        <p class="text-center text-gray-300 mb-12">Este workflow es el proceso encargado de gestionar todas las interacciones provenientes del canal de Messenger. El canal está integrado en la misma API de Meta que Instagram.</p>
+
+        <div class="mb-12">
+            <h3 class="text-2xl text-center font-semibold text-blue-400 mb-4">Meta Graph API (Oficial)</h3>
+            <p class="text-gray-300 mb-4">
+                La integración de Messenger utiliza la misma infraestructura que Instagram a través de Meta for Developers (Graph API), logrando un sistema unificado para ambos canales. Esta ruta oficial garantiza:
+            </p>
+            <ul class="space-y-2 text-sm text-gray-300 ml-4 list-disc list-inside">
+                <li>
+                    <span class="font-medium text-green-400">Gratuidad y Sostenibilidad:</span> La API de Messenger es gratuita para volúmenes de mensajería estándar.
+                </li>
+                <li>
+                    <span class="font-medium text-green-400">Seguridad:</span> Garantiza estabilidad total sin el riesgo de bloqueo de cuenta común en herramientas no oficiales.
+                </li>
+                <li>
+                    <span class="font-medium text-green-400">Capacidad de Eventos:</span> Permite capturar tanto mensajes de texto/multimedia como notificaciones y *postbacks* de botones, procesados mediante la conexión de Webhook validada por token.
+                </li>
+            </ul>
+        </div>
+
+        <div>
+            <h3 class="text-2xl text-center font-semibold text-pink-400 mb-4">Arquitectura lógica del flujo</h3>
+            <p class="text-gray-300 mb-6">
+                El sistema mantiene la misma arquitectura de procesamiento secuencial organizada en cuatro niveles o capas funcionales, compartiendo la lógica de procesamiento con Instagram:
+            </p>
+            
+            <div class="space-y-6">
+                
+                <div class="bg-white/5 p-5 rounded-lg border-l-4 border-blue-500">
+                    <h4 class="font-semibold text-blue-400 mb-3 text-lg">1. Capa de entrada</h4>
+                    <p class="text-gray-300 text-sm mb-4">
+                        Recepción de eventos mediante webhooks oficiales, validación del Hub Challenge y filtrado de mensajes provenientes de Messenger.
+                    </p>
+                    <ul class="space-y-2 text-gray-300 text-sm ml-4">
+                        <li><strong>Nodo 1 – Webhook (Validación):</strong> Recibe la verificación inicial de Meta y mensajes entrantes en /messenger-test. </li>
+                        <li><strong>Nodo 2 – IF (Hub Challenge):</strong> Comprueba hub.mode y hub.verify_token para validar que Meta sea legítimo.</li>
+                        <li><strong>Nodo 3 – Respond to Webhook (Validación):</strong> Devuelve hub.challenge para completar la validación del webhook.</li>
+                        <li><strong>Nodo 4 – Mensaje cliente:</strong> Captura mensajes POST provenientes de Messenger.</li>
+                        <li><strong>Nodo 5 – IF Anti-Eco:</strong> Filtra mensajes propios, notificaciones de entrega y lecturas.</li>
+                        <li><strong>Nodo 6 – Clasificador de mensaje:</strong> Determina si es mensaje de texto, audio o imagen.</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white/5 p-5 rounded-lg border-l-4 border-purple-500">
+                    <h4 class="font-semibold text-purple-400 mb-3 text-lg">2. Capa de procesamiento</h4>
+                    <p class="text-gray-300 text-sm mb-4">
+                        Normalización de formato y extracción de contenido según tipo de mensaje. La lógica de transcripción de audio y el análisis de imágenes es compartida con el canal de Instagram.
+                    </p>
+                    
+                    <div class="ml-4 space-y-4">
+                        <div>
+                            <p class="font-medium text-gray-200 mb-2">Texto</p>
+                            <ul class="space-y-1 text-gray-300 text-sm ml-4">
+                                <li><strong>Nodo 7 – Mapear texto:</strong> Extrae el texto del cliente y su sender_id.</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <p class="font-medium text-gray-200 mb-2">Audio</p>
+                            <ul class="space-y-1 text-gray-300 text-sm ml-4">
+                                <li><strong>Nodo 8 – Obtener audio:</strong> Descarga el archivo desde Meta.</li>
+                                <li><strong>Nodo 9 – Transcribir audio:</strong> Convierte audio a texto utilizando Whisper.</li>
+                                <li><strong>Nodo 10 – Mapear audio:</strong> Envía el texto transcrito y el ID del usuario al agente.</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <p class="font-medium text-gray-200 mb-2">Imagen</p>
+                            <ul class="space-y-1 text-gray-300 text-sm ml-4">
+                                <li><strong>Nodo 11 – Obtener imagen:</strong> Descarga la imagen en binario desde los servidores de Meta.</li>
+                                <li><strong>Nodo 12 – Analizar imagen:</strong> GPT-4 Vision extrae los datos del comprobante (JSON: monto, id, nombre, validación).</li>
+                                <li><strong>Nodo 13 – Mapear imagen:</strong> Normaliza el JSON y lo envía al agente IA.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white/5 p-5 rounded-lg border-l-4 border-orange-500">
+                    <h4 class="font-semibold text-orange-400 mb-3 text-lg">3. Capa de agente IA</h4>
+                    <p class="text-gray-300 text-sm mb-4">
+                        Núcleo conversacional unificado que usa la misma memoria en Redis y herramientas para gestionar la coherencia de las conversaciones entre canales.
+                    </p>
+                    <ul class="space-y-2 text-gray-300 text-sm ml-4">
+                        <li><strong>Nodo 14 – Agente IA Principal:</strong> Interpreta intención, usa herramientas y genera las respuestas.</li>
+                        <li><strong>Nodo 15 – Cerebro principal:</strong> Modelo Gemini.</li>
+                        <li><strong>Nodo 16 – Cerebro fallback:</strong> GPT-4 si Gemini falla.</li>
+                        <li><strong>Nodo 17 – Memoria (Redis):</strong> Guarda contexto (8 mensajes, 20 min de TTL).</li>
+                    </ul>
+
+                    <div class="mt-4 pt-4 border-t border-white/10">
+                        <p class="font-medium text-lime-400 mb-2">🟩 Herramientas del Agente (Tools)</p>
+                        <ul class="space-y-1 text-gray-300 text-sm ml-4">
+                            <li><strong>Tool 1 – Inventario Femenino:</strong> Consulta productos del inventario (Hoja Femenino).</li>
+                            <li><strong>Tool 2 – Inventario Masculino:</strong> Consulta productos (Hoja Masculino).</li>
+                            <li><strong>Tool 3 – Tarifa de envíos:</strong> Retorna costo según la ciudad.</li>
+                            <li><strong>Tool 4 – Registro de ventas:</strong> Registra ventas con datos del cliente y compra.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="bg-white/5 p-5 rounded-lg border-l-4 border-green-500">
+                    <h4 class="font-semibold text-green-400 mb-3 text-lg">4. Capa de salida</h4>
+                    <p class="text-gray-300 text-sm mb-4">
+                        Normalización del texto y envío final mediante la API oficial de Meta usando Page Access Token, apuntando al endpoint de Messenger.
+                    </p>
+                    <ul class="space-y-2 text-gray-300 text-sm ml-4">
+                        <li><strong>Nodo 18 – Limpiar respuesta:</strong> Elimina Markdown, normaliza saltos de línea y arma el mensaje final.</li>
+                        <li><strong>Nodo 19 – Respuesta al cliente:</strong> Envía el mensaje al usuario vía Messenger utilizando el endpoint oficial.</li>
+                        <li><strong>Nodo 20 – Confirmar Recibido Final:</strong> Cierra el flujo correctamente.</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white/5 p-5 rounded-lg border-l-4 border-amber-500">
+                    <h4 class="font-semibold text-amber-400 mb-3 text-lg">🟧 Nodos Auxiliares</h4>
+                    <ul class="space-y-2 text-gray-300 text-sm ml-4">
+                        <li><strong>Nodo Aux – Interruptor de mantenimiento:</strong> Activa/desactiva modo mantenimiento.</li>
+                        <li><strong>Nodo Aux – ¿Modo mantenimiento activo?:</strong> Si está activo, detiene el flujo completo.</li>
+                    </ul>
+                </div>
+
+                <div class="my-10">
+            <p class="text-center text-2xl font-semibold text-pink-400 mb-4">Video agente funcional</p>
+
+            <div class="relative pb-[56.25%] h-0 overflow-hidden rounded-xl shadow-xl border border-purple-500/30">
+                <iframe 
+                    src="https://drive.google.com/file/d/1dlUxizQs3LECLzhlCNLN-BObJDzefFYa/preview"
+                    class="absolute top-0 left-0 w-full h-full"
+                    allow="autoplay">
+                </iframe>
+            </div>
+        </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
 
         <!-- Sección Resultados (NUEVA - VACÍA) -->
        <div id="resultados" class="section-content">
